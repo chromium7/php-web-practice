@@ -21,7 +21,7 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
-        $request->user()->posts()->create([$request->only('body')]);
+        $request->user()->posts()->create(['body' => $request->body]);
 
         // Post::create([
         //     'user_id' => auth()->id(),
